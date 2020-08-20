@@ -6,6 +6,7 @@ const path = require('path');
 const cors = require('cors');
 const multer = require('multer');
 const { format } = require('timeago.js');
+const uuid = require('uuid');
 
 
 
@@ -24,14 +25,18 @@ mongoose.connect(URI, {useNewUrlParser:true, useUnifiedTopology:true})
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
+
+
+// Multer Middlwares - Creates the folder if doesn't exists
+app.use(express.urlencoded({extended: false}));
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'public/uploads'),
-    filename: (req, file, cb, filename) => {
-        console.log(file);
-        cb(null, uuid() + path.extname(file.originalname));
+    filename: (req, file, cb) => {
+        cb(null, new Date().getTime() + path.extname(file.originalname));
     }
-}) 
-app.use(multer({storage}).single('image'));
+});
+app.use(multer({storage}).array('image', 20));
+
 
 
 // Global variables

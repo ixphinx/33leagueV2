@@ -13,17 +13,23 @@ cloudinary.config({
     api_secret: 'Newfi_6Q6HRx0v3cRLKrsYeE3To' 
   });
 
-router.post('/images/add', async (req, res)=>{
-    res.header('Access-Control-Allow-Origin', '*');
-    const result = await cloudinary.v2.uploader.upload(req.params.imgpath);
-    new  Data ({
-        imgid: req.params.imgid,
-        imgurl: result.url,
-    });
-    await Data.save();
-    await fs.unlink(req.params.imgpath);
-    res.send('Image Upload');
+  router.post('/images/add', async (req, res) => {
+    const { title, description } = req.body;
+    for (let i = 0; i < req.files.length; i++) {
+        const element = req.files[i];
+        try {
+            const result = await cloudinary.v2.uploader.upload(req.files[i].path);
+            const newPhoto = new Data({title, description, imageURL: result.url, public_id: result.public_id});
+            await newPhoto.save();
+            await fs.unlink(req.files[i].path);
+        } catch (e) {
+            console.log(e)
+        }
+        
+    }
 
+    
+    res.redirect('https://www.google.com.uy/');
 });
 
 router.get('/', async (req,res)=>{

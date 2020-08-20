@@ -103,7 +103,14 @@ const Data = new Schema({
     /*------ imagenes ----- */
     imgid: String,
     imgurl: String,
-    imgpath: String
+    imgpath: String,
+
+
+    title: String,
+    description: String,
+    imageURL: String,
+    public_id: String
+
 
 
 });
