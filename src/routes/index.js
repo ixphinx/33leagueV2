@@ -29,7 +29,7 @@ cloudinary.config({
     }
 
     
-    res.redirect('https://www.google.com.uy/');
+    res.redirect('https://33league.uy/#/');
 });
 
 router.get('/', async (req,res)=>{
