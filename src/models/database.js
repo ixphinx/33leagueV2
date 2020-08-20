@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { stringify } = require('uuid');
 const {Schema} = mongoose;
 
 const Data = new Schema({
@@ -101,7 +102,8 @@ const Data = new Schema({
     
     /*------ imagenes ----- */
     imgid: String,
-    imgurl: String
+    imgurl: String,
+    imgpath: String
 
 
 });

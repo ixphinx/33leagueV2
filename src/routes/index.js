@@ -15,13 +15,13 @@ cloudinary.config({
 
 router.post('/images/add', async (req, res)=>{
     res.header('Access-Control-Allow-Origin', '*');
-    const result = await cloudinary.v2.uploader.upload(req.file.path);
+    const result = await cloudinary.v2.uploader.upload(req.params.imgpath);
     new  Data ({
-        imgid: req.params.id,
+        imgid: req.params.imgid,
         imgurl: result.url,
     });
     await Data.save();
-    await fs.unlink(req.file.path);
+    await fs.unlink(req.params.imgpath);
     res.send('Image Upload');
 
 });
