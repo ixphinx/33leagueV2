@@ -27,7 +27,7 @@ cloudinary.config({
         }
         
     }
-      res.redirect('#');
+      res.redirect('https://33league.uy/#/administracion');
 
 });
 
