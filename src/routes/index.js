@@ -27,6 +27,7 @@ cloudinary.config({
         }
         
     }
+      res.redirect('#');
 
 });
 
