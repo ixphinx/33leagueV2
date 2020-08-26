@@ -27,7 +27,7 @@ cloudinary.config({
         }
         
     }
-      res.redirect('https://melosevenleague.uy/#/administracion');
+      res.redirect('https://33league.uy/#/administracion');
 
 });
 
