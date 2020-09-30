@@ -8,9 +8,9 @@ const fs = require('fs-extra');
 const Data = require('../models/database');
 
 cloudinary.config({ 
-    cloud_name: 'kaygua', 
-    api_key: '467723897573917', 
-    api_secret: 'Newfi_6Q6HRx0v3cRLKrsYeE3To' 
+    cloud_name: 'viejo-kaygua', 
+    api_key: '835411532229195', 
+    api_secret: '-1QQkWe7bdysOTo5fWtiwYG9xAk' 
   });
 
   router.post('/images/add', async (req, res) => {
@@ -27,7 +27,7 @@ cloudinary.config({
         }
         
     }
-      res.redirect('https://33league.uy/#/auditorias');
+      res.redirect('https://33league.uy/#/fotos');
 
 });
 
