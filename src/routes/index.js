@@ -27,7 +27,7 @@ cloudinary.config({
         }
         
     }
-      res.redirect('https://33league.uy/#/fotos');
+      res.redirect('https://33league.uy/#/auditorias');
 
 });
 
