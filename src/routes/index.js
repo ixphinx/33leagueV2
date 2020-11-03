@@ -8,9 +8,9 @@ const fs = require('fs-extra');
 const Data = require('../models/database');
 
 cloudinary.config({ 
-    cloud_name: 'viejo-kaygua', 
-    api_key: '835411532229195', 
-    api_secret: '-1QQkWe7bdysOTo5fWtiwYG9xAk' 
+    cloud_name: 'divaclouda', 
+    api_key: '844357133118645', 
+    api_secret: 'lEri1DCiXFXkGMZZIg5L2ijp0Ns' 
   });
 
   router.post('/images/add', async (req, res) => {
