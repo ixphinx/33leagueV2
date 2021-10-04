@@ -15,7 +15,7 @@ const uuid = require('uuid');
 app.set('port', process.env.PORT || 3000);
 
 //database
-const URI = 'mongodb+srv://admin:huevon33@database-aizqn.gcp.mongodb.net/test?retryWrites=true&w=majority';
+const URI = 'mongodb+srv://admin:huevon33@database-aizqn.gcp.mongodb.net/ligacn?retryWrites=true&w=majority';
 mongoose.connect(URI, {useNewUrlParser:true, useUnifiedTopology:true})
     .then(db => console.log('DB connected'))
     .catch(err => console.log(err));   
